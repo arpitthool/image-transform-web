@@ -5,7 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image Transform App</title>
-    <!-- Link to external CSS file -->
+    <!-- Link to external CSS file 
+        We use url_for('static', filename='css/style.css') instead of just 'static/css/style.css'
+        because url_for dynamically generates the correct URL for static files, taking into account
+        the application's configuration, static folder location, and any URL prefixes or versioning.
+        This ensures the link will always work, even if the app is deployed in a subdirectory or
+        the static folder is moved. Using the filename directly can break if the app's structure changes.
+    -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
