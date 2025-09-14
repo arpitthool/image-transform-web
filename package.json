@@ -1,0 +1,13 @@
+{
+  "name": "image-transform-web",
+  "version": "1.0.0",
+  "description": "Image transformation web application",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "dev": "tsc --watch & python app.py"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}

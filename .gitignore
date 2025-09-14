@@ -1,1 +1,23 @@
-uploads/
+# Node modules
+node_modules/
+
+# TypeScript compiled files
+static/js/dist/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db

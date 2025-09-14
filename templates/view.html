@@ -15,10 +15,30 @@
         <div class="image-info">
             <strong>Filename:</strong> {{ filename }}
         </div>
-        <!-- Image display section -->
-        <div class="image-container">
-            <!-- Display the uploaded image using the filename variable -->
-            <img src="{{ url_for('uploaded_file', filename=filename) }}" alt="Uploaded Image" class="uploaded-image">
+        <!-- Image comparison section -->
+        <div class="image-comparison">
+            <div class="image-panel">
+                <h4>Original Image</h4>
+                <!-- Display the uploaded image using the filename variable -->
+                <img src="{{ url_for('uploaded_file', filename=filename) }}" alt="Original Image" class="uploaded-image" id="originalImage">
+            </div>
+            <div class="image-panel">
+                <h4>Processed Image</h4>
+                <div id="processedImageContainer" class="processed-container">
+                    <p class="placeholder-text">Click "Convert to Grayscale" to see the result</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Processing controls -->
+        <div class="text-center" style="margin: 20px 0;">
+            <button id="grayscaleBtn" class="process-btn">Convert to Grayscale</button>
+        </div>
+        
+        <!-- Loading indicator -->
+        <div class="loading" id="loading" style="display: none;">
+            <div class="spinner"></div>
+            <p>Processing image...</p>
         </div>
         
         <!-- Navigation buttons section -->
@@ -27,5 +47,11 @@
             <a href="{{ url_for('index') }}" class="upload-new-btn">Upload New Image</a>
         </div>
     </div>
+
+    <!-- Pass filename to JavaScript -->
+    <div data-filename="{{ filename }}" style="display: none;"></div>
+    
+    <!-- Load compiled TypeScript -->
+    <script src="{{ url_for('static', filename='js/dist/image-processor.js') }}"></script>
 </body>
 </html>
